@@ -15,8 +15,8 @@ namespace Cassette.RequireJS
             this.Bundle = bundle;
             this.Path = bundle.Path;
             this.ReferencePaths = bundle.References;
-            ModulePath = AssetModule.ConvertAssetPathToModulePath(bundle.Path, baseUrl);
-            Alias = AssetModule.ConvertAssetPathToAlias(bundle.Path);
+            ModulePath = Module.ConvertAssetPathToModulePath(bundle.Path, baseUrl);
+            Alias = Module.ConvertAssetPathToAlias(bundle.Path);
             externalUrl = bundle.ExternalUrl;
             if (externalUrl.EndsWith(".js"))
             {

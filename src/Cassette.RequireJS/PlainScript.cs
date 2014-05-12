@@ -7,7 +7,7 @@ using Microsoft.Ajax.Utilities;
 
 namespace Cassette.RequireJS
 {
-    class PlainScript : AssetModule, IAssetTransformer, IAmdShimmableModule
+    class PlainScript : Module, IAssetTransformer, IAmdShimmableModule
     {
         readonly IModuleInitializer modules;
         readonly SimpleJsonSerializer jsonSerializer;

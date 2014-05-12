@@ -2,7 +2,7 @@
 
 namespace Cassette.RequireJS
 {
-    class NamedModule : AssetModule
+    class NamedModule : Module
     {
         public NamedModule(IAsset asset, Bundle bundle, string modulePath)
             : base(asset, bundle,null)

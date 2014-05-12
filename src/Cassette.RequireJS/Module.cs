@@ -7,11 +7,11 @@ using Cassette.Utilities;
 
 namespace Cassette.RequireJS
 {
-    abstract class AssetModule : IAmdModule
+    abstract class Module : IAmdModule
     {
         
 
-        protected AssetModule(IAsset asset, Bundle bundle, string baseUrl)
+        protected Module(IAsset asset, Bundle bundle, string baseUrl)
         {
             if (asset == null) throw new ArgumentNullException("asset");
             if (bundle == null) throw new ArgumentNullException("bundle");
