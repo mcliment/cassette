@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.Linq;
 using Cassette.Utilities;
 using Microsoft.Ajax.Utilities;
 
@@ -7,12 +8,12 @@ namespace Cassette.RequireJS
 {
     class AnonymousModule : Module, IAssetTransformer
     {
-        public AnonymousModule(IAsset asset, Bundle bundle,string baseUrl = null)
+        public AnonymousModule(IAsset asset, Bundle bundle, string baseUrl = null)
             : base(asset, bundle, baseUrl)
         {
             asset.AddAssetTransformer(this);
         }
-    
+
         public Func<Stream> Transform(Func<Stream> openSourceStream, IAsset asset)
         {
             return () =>
@@ -72,7 +73,7 @@ namespace Cassette.RequireJS
             {
                 // e.g. define( [...], function() {} )
                 // or   define( function() {} )
-                return node.Arguments.Count < 3;
+                return node.Arguments.Count > 0 && node.Arguments.Count < 3;
             }
         }
     }
